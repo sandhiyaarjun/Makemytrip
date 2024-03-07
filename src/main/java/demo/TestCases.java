@@ -187,19 +187,19 @@ public class TestCases {
 
             WebElement arrivalLocationInput = driver.findElement(By.xpath("//input[@placeholder='To']"));
             wait.until(ExpectedConditions.visibilityOf(arrivalLocationInput));
-            arrivalLocationInput.sendKeys("del");
+            arrivalLocationInput.sendKeys("ran");
             Thread.sleep(2000);
             WebElement arrivalLocationOption = driver.findElement(By.xpath("//div[@class='makeFlex column']"));
             arrivalLocationOption.click();
             Thread.sleep(2000);
 
-            WebElement departureDate = driver.findElement(By.xpath("//div[@aria-label='Sat Apr 6 2024']"));
+            WebElement departureDate = driver.findElement(By.xpath("//div[@aria-label='Fri Mar 29 2024']"));
             departureDate.click();
 
             WebElement searchButton = driver.findElement(By.id("search_button"));
             searchButton.click();
 
-            WebElement error = driver.findElement(By.xpath("//span[text()='No buses found for 6 Apr']"));
+            WebElement error = driver.findElement(By.xpath("//span[text()='No buses found for 29 Mar']"));
             String text = error.getText();
             String expected = "No buses found";
             if (text.equals(expected)) {
